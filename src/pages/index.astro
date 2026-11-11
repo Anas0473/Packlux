@@ -1,0 +1,139 @@
+---
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Packlux er på vej. Et nyt sted for Pokémon booster packs med levering i Danmark." />
+    <meta name="theme-color" content="#172b42" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Packlux — Noget spændende er på vej</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#indhold">Gå til indhold</a>
+    <div class="announcement">En ny pakke. En ny mulighed. Velkommen til Packlux.</div>
+    <header>
+      <a class="brand" href="/" aria-label="Packlux forside">PACK<span>LUX</span><span class="brand-star" aria-hidden="true">✦</span></a>
+      <nav aria-label="Hovedmenu">
+        <a href="#sortiment">Booster packs</a>
+        <a href="#om">Om Packlux</a>
+      </nav>
+      <span class="launch-badge"><span aria-hidden="true"></span> Åbner snart</span>
+    </header>
+    <main id="indhold">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">TIL DIG, DER ELSKER AT ÅBNE PACKS</p>
+          <h1 id="hero-title">Din næste<br />store <em>pull.</em></h1>
+          <p class="intro">Spændingen starter med en booster pack. Vi bygger et nyt sted for Pokémon-samlere — med levering i Danmark.</p>
+          <a class="button" href="#sortiment">Se hvad der er på vej <span aria-hidden="true">↗</span></a>
+          <p class="small-note">Vi gør klar til åbning. Salget er ikke startet endnu.</p>
+        </div>
+        <div class="pack-scene" role="img" aria-label="Illustrerede Packlux boosterpakker. Ikke faktiske produkter.">
+          <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
+          <span class="spark spark-one" aria-hidden="true">✦</span>
+          <span class="spark spark-two" aria-hidden="true">✧</span>
+          <div class="pack pack-back"><span>PACKLUX</span><div class="pack-symbol">✦</div><small>THE NEXT DISCOVERY</small></div>
+          <div class="pack pack-front"><span>PACKLUX</span><div class="pack-symbol">✦</div><small>YOUR NEXT GREAT PULL</small></div>
+          <span class="art-caption">PACKLUX · ILLUSTRATION</span>
+        </div>
+      </section>
+      <div class="feature-strip" aria-label="Vores fokus">
+        <span>Pokémon booster packs</span><span>Priser i danske kroner</span><span>Levering i Danmark</span>
+      </div>
+      <section class="about" id="sortiment" aria-labelledby="range-title">
+        <div>
+          <p class="eyebrow">LILLE SORTIMENT. STOR SPÆNDING.</p>
+          <h2 id="range-title">Fokus på booster packs.</h2>
+        </div>
+        <div>
+          <p>Vi starter med Pokémon booster packs. Her vil du kunne finde vores udvalg, priser og lagerstatus, når shoppen åbner.</p>
+          <div class="notice"><span class="notice-icon" aria-hidden="true">↗</span><div><strong>Sortimentet er på vej</strong><p>Produkter, fragtpriser og betalingsmuligheder offentliggøres inden åbning. Du kan ikke bestille endnu.</p></div></div>
+        </div>
+      </section>
+      <section class="closing" id="om" aria-labelledby="about-title">
+        <p class="eyebrow">VELKOMMEN TIL PACKLUX</p>
+        <h2 id="about-title">Til samlingen.<br />Til spændingen.<br /><span>Til din næste pakke.</span></h2>
+        <p>En dansk webshop under opbygning. Følg med her, mens vi gør klar til de første packs.</p>
+      </section>
+    </main>
+    <footer><a class="brand" href="/">PACK<span>LUX</span></a><p>© {year} Packlux</p><p>Uafhængig butik. Ikke tilknyttet The Pokémon Company.</p></footer>
+  </body>
+</html>
+
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(html) { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+  :global(body) { margin: 0; background: #faf9f5; color: #172b42; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+  :global(a) { color: inherit; }
+  :global(a:focus-visible) { outline: 3px solid #cb6400; outline-offset: 6px; }
+  .skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 5; padding: 1rem; background: white; }
+  .skip-link:focus { top: 1rem; }
+  .announcement { background: #172b42; color: #fff; padding: .65rem 1rem; text-align: center; font-size: .75rem; letter-spacing: .04em; }
+  header { max-width: 1280px; margin: auto; padding: 1.6rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .brand { display: inline-flex; align-items: center; text-decoration: none; font-size: 1.6rem; font-weight: 900; letter-spacing: -.08em; }
+  .brand > span:not(.brand-star) { color: #8a5700; }
+  .brand-star { color: #8a5700; margin-left: .5rem; font-size: 1.8rem; }
+  nav { display: flex; gap: 2rem; font-size: .85rem; }
+  nav a { text-decoration: none; }
+  nav a:hover { text-decoration: underline; text-underline-offset: .3rem; }
+  .launch-badge { border: 1px solid #d9dedb; border-radius: 2rem; padding: .4rem .8rem; font-size: .75rem; white-space: nowrap; }
+  .launch-badge > span { display: inline-block; width: 6px; height: 6px; margin-right: .4rem; border-radius: 50%; background: #427350; }
+  .hero { display: grid; grid-template-columns: 1fr 1fr; max-width: 1280px; margin: auto; padding: 4.5rem 3rem 5rem; gap: 2rem; align-items: center; }
+  .eyebrow { font-size: .7rem; font-weight: 700; letter-spacing: .16em; margin: 0 0 1.5rem; }
+  h1 { margin: 0; font-size: clamp(3.8rem, 6.8vw, 6.7rem); line-height: .98; letter-spacing: -.065em; font-weight: 800; }
+  h1 em { font-family: Georgia, serif; font-weight: 400; color: #8a5700; }
+  .intro { max-width: 27rem; margin: 2rem 0; font-size: 1rem; color: #53606a; }
+  .button { display: inline-flex; gap: 2rem; align-items: center; background: #172b42; color: white; border-radius: .3rem; padding: .9rem 1.3rem; font-size: .85rem; font-weight: 700; text-decoration: none; }
+  .button:hover { background: #2d4863; }
+  .button span { font-size: 1.2rem; }
+  .small-note { font-size: .72rem; color: #616b72; margin-top: 1rem; }
+  .pack-scene { position: relative; overflow: clip; min-height: 440px; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse, #efe2c4 0%, #faf9f5 68%); isolation: isolate; }
+  .orbit { position: absolute; width: 92%; height: 70%; border: 1px solid #c9c7bc; border-radius: 50%; transform: rotate(-30deg); z-index: -1; }
+  .orbit-two { transform: rotate(35deg); height: 45%; }
+  .pack { width: 175px; height: 270px; position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 22px 10px; background: repeating-linear-gradient(90deg, transparent 0 4px, #ffffff15 4px 5px), linear-gradient(135deg, #224769, #0d2034); color: #f0c868; border-top: 12px solid #1b3853; border-bottom: 12px solid #1b3853; box-shadow: 12px 22px 30px #172b4226; }
+  .pack > span { font-size: 1.3rem; letter-spacing: -.06em; font-weight: 900; }
+  .pack small { font-size: .46rem; letter-spacing: .14em; }
+  .pack-symbol { font-size: 100px; line-height: 1; }
+  .pack-back { transform: translate(-65px, 12px) rotate(-18deg); background: repeating-linear-gradient(90deg, transparent 0 4px, #ffffff15 4px 5px), linear-gradient(135deg, #b28739, #eacb80); color: #172b42; border-color: #b68b3d; }
+  .pack-front { transform: translate(60px, -6px) rotate(13deg); }
+  .spark { position: absolute; font-size: 2.8rem; color: #926110; }
+  .spark-one { top: 20px; right: 15%; }
+  .spark-two { bottom: 40px; left: 10%; }
+  .art-caption { position: absolute; bottom: 0; font-size: .55rem; letter-spacing: .18em; color: #657079; }
+  .feature-strip { border-block: 1px solid #d9dedb; padding: 1.3rem 1.5rem; display: flex; justify-content: center; gap: 5rem; font-size: .8rem; }
+  .feature-strip span::before { content: "✦"; color: #8a5700; margin-right: .8rem; }
+  .about { max-width: 1280px; margin: auto; padding: 5rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  h2 { font-size: clamp(1.9rem, 3vw, 2.7rem); letter-spacing: -.045em; line-height: 1.15; margin: 0; }
+  .about > div > p:not(.eyebrow) { margin: 0 0 1.5rem; color: #53606a; }
+  .notice { display: flex; gap: 1rem; padding: 1.3rem; background: #eeeee7; border-radius: .4rem; }
+  .notice strong { font-size: .9rem; }
+  .notice p { margin: .4rem 0 0; font-size: .85rem; color: #53606a; }
+  .notice-icon { font-size: 1.5rem; }
+  .closing { text-align: center; padding: 4rem 1.5rem; background: #172b42; color: white; }
+  .closing h2 { font-size: clamp(2.5rem, 5vw, 4rem); }
+  .closing h2 span { color: #edc46f; }
+  .closing > p:last-child { color: #c1cbd4; max-width: 27rem; margin: 1.7rem auto 0; font-size: .9rem; }
+  footer { max-width: 1280px; margin: auto; padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  footer .brand { font-size: 1.2rem; }
+  footer p { font-size: .7rem; color: #616b72; }
+  @media (max-width: 760px) {
+    header { padding: 1.2rem; gap: .75rem; flex-wrap: wrap; }
+    header .brand { font-size: 1.35rem; }
+    nav { order: 3; width: 100%; gap: 1.5rem; padding-top: .5rem; }
+    .hero { grid-template-columns: 1fr; padding: 2.5rem 1.2rem; gap: 1rem; }
+    .hero-copy { max-width: 32rem; }
+    .pack-scene { min-height: 380px; width: 100%; max-width: 480px; justify-self: center; }
+    .pack { width: 145px; height: 230px; }
+    .pack-front { transform: translate(50px, -6px) rotate(13deg); }
+    .pack-back { transform: translate(-50px, 12px) rotate(-18deg); }
+    .feature-strip { flex-wrap: wrap; gap: .7rem 1.5rem; }
+    .about { grid-template-columns: 1fr; padding: 3rem 1.2rem; gap: 1.5rem; }
+    footer { flex-wrap: wrap; padding: 1.5rem 1.2rem; gap: .5rem 1.5rem; }
+    footer p:last-child { width: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) { :global(html) { scroll-behavior: auto; } }
+</style>
