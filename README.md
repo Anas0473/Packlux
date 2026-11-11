@@ -1,5 +1,7 @@
 # Packlux
 
+![Packlux logo](public/packlux-logo.png)
+
 Danish launch page for a future Pokemon booster-pack shop. Built with Astro and
 deployed as a static site on Cloudflare Pages.
 

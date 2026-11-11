@@ -16,7 +16,7 @@ const year = new Date().getFullYear();
     <a class="skip-link" href="#indhold">Gå til indhold</a>
     <div class="announcement">En ny pakke. En ny mulighed. Velkommen til Packlux.</div>
     <header>
-      <a class="brand" href="/" aria-label="Packlux forside">PACK<span>LUX</span><span class="brand-star" aria-hidden="true">✦</span></a>
+      <a class="brand" href="/" aria-label="Packlux forside"><img src="/packlux-logo.png" alt="Packlux" width="1152" height="768" /></a>
       <nav aria-label="Hovedmenu">
         <a href="#sortiment">Booster packs</a>
         <a href="#om">Om Packlux</a>
@@ -60,7 +60,7 @@ const year = new Date().getFullYear();
         <p>En dansk webshop under opbygning. Følg med her, mens vi gør klar til de første packs.</p>
       </section>
     </main>
-    <footer><a class="brand" href="/">PACK<span>LUX</span></a><p>© {year} Packlux</p><p>Uafhængig butik. Ikke tilknyttet The Pokémon Company.</p></footer>
+    <footer><a class="brand" href="/" aria-label="Packlux forside"><img src="/packlux-logo.png" alt="Packlux" width="1152" height="768" loading="lazy" /></a><p>© {year} Packlux</p><p>Uafhængig butik. Ikke tilknyttet The Pokémon Company.</p></footer>
   </body>
 </html>
 
@@ -74,9 +74,8 @@ const year = new Date().getFullYear();
   .skip-link:focus { top: 1rem; }
   .announcement { background: #172b42; color: #fff; padding: .65rem 1rem; text-align: center; font-size: .75rem; letter-spacing: .04em; }
   header { max-width: 1280px; margin: auto; padding: 1.6rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-  .brand { display: inline-flex; align-items: center; text-decoration: none; font-size: 1.6rem; font-weight: 900; letter-spacing: -.08em; }
-  .brand > span:not(.brand-star) { color: #8a5700; }
-  .brand-star { color: #8a5700; margin-left: .5rem; font-size: 1.8rem; }
+  .brand { display: inline-flex; flex: 0 0 auto; align-items: center; }
+  .brand img { display: block; width: 180px; height: auto; border-radius: .4rem; }
   nav { display: flex; gap: 2rem; font-size: .85rem; }
   nav a { text-decoration: none; }
   nav a:hover { text-decoration: underline; text-underline-offset: .3rem; }
@@ -118,11 +117,11 @@ const year = new Date().getFullYear();
   .closing h2 span { color: #edc46f; }
   .closing > p:last-child { color: #c1cbd4; max-width: 27rem; margin: 1.7rem auto 0; font-size: .9rem; }
   footer { max-width: 1280px; margin: auto; padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
-  footer .brand { font-size: 1.2rem; }
+  footer .brand img { width: 132px; }
   footer p { font-size: .7rem; color: #616b72; }
   @media (max-width: 760px) {
     header { padding: 1.2rem; gap: .75rem; flex-wrap: wrap; }
-    header .brand { font-size: 1.35rem; }
+    header .brand img { width: 144px; }
     nav { order: 3; width: 100%; gap: 1.5rem; padding-top: .5rem; }
     .hero { grid-template-columns: 1fr; padding: 2.5rem 1.2rem; gap: 1rem; }
     .hero-copy { max-width: 32rem; }
