@@ -88,18 +88,7 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
         <p>Vi pakker snart samlerglæden ud. Kig forbi igen, når de første packs lander!</p>
       </section>
     </main>
-    <footer>
-      <a class="brand" href="/" aria-label="Packlux forside"><img src="/packlux-logo.png" alt="Packlux" width="1152" height="768" loading="lazy" /></a>
-      <div class="footer-details">
-        <p class="footer-name">© {year} Packlux</p>
-        <p>CVR: 46860330</p>
-      </div>
-      <div class="footer-contact">
-        <p class="footer-label">Kontakt os</p>
-        <a href="mailto:packluxdk@gmail.com">packluxdk@gmail.com</a>
-      </div>
-      <p class="footer-disclaimer">Uafhængig butik. Ikke tilknyttet The Pokémon Company.</p>
-    </footer>
+    <footer><a class="brand" href="/" aria-label="Packlux forside"><img src="/packlux-logo.png" alt="Packlux" width="1152" height="768" loading="lazy" /></a><p>© {year} Packlux · CVR: 46860330<br /><a href="mailto:packluxdk@gmail.com">packluxdk@gmail.com</a></p><p>Uafhængig butik. Ikke tilknyttet The Pokémon Company.</p></footer>
   </body>
 </html>
 
@@ -172,15 +161,9 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
   .closing h2 { font-size: clamp(2.5rem, 5vw, 4rem); }
   .closing .eyebrow, .closing h2 span { color: #ffdf57; }
   .closing > p:last-child { color: #edf4ff; max-width: 27rem; margin: 1.7rem auto 0; font-size: .9rem; }
-  footer { max-width: 1280px; margin: auto; padding: 2rem 3rem; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.5rem 3rem; }
+  footer { max-width: 1280px; margin: auto; padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
   footer .brand img { width: 132px; }
-  footer p { margin: 0; font-size: .75rem; color: #53606a; }
-  .footer-details, .footer-contact { display: grid; gap: .3rem; }
-  footer .footer-name { color: #172b42; font-size: .85rem; font-weight: 800; }
-  .footer-label { font-weight: 800; }
-  .footer-contact a { font-size: .85rem; color: #204fa8; text-decoration: none; text-underline-offset: .2rem; }
-  .footer-contact a:hover { text-decoration: underline; }
-  footer .footer-disclaimer { grid-column: 1 / -1; padding-top: 1rem; border-top: 1px solid #d6e2ef; font-size: .7rem; }
+  footer p { font-size: .7rem; color: #616b72; }
   @media (max-width: 760px) {
     header { padding: 1.2rem; gap: .75rem; flex-wrap: wrap; }
     header .brand img { width: 144px; }
@@ -193,8 +176,8 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
     .pack-back { transform: translate(-50px, 12px) rotate(-18deg); }
     .feature-strip { flex-wrap: wrap; gap: .7rem 1.5rem; }
     .about { grid-template-columns: 1fr; padding: 3rem 1.2rem; gap: 1.5rem; }
-    footer { grid-template-columns: 1fr; justify-items: start; padding: 1.5rem 1.2rem; gap: 1.2rem; }
-    footer .footer-disclaimer { width: 100%; }
+    footer { flex-wrap: wrap; padding: 1.5rem 1.2rem; gap: .5rem 1.5rem; }
+    footer p:last-child { width: 100%; }
   }
   @media (prefers-reduced-motion: reduce) { :global(html) { scroll-behavior: auto; } }
 </style>
