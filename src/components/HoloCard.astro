@@ -1,7 +1,7 @@
 <section class="holo-demo" id="holo" aria-labelledby="holo-title">
   <div class="holo-copy">
-    <p class="eyebrow">PACKLUX LAB · INTERAKTIV DEMO</p>
-    <h2 id="holo-title">Et glimt af<br /><em>noget særligt.</em></h2>
+    <p class="eyebrow">✦ PRØV SELV! · INTERAKTIV DEMO</p>
+    <h2 id="holo-title">Uuuh…<br /><em>se det glimte!</em></h2>
     <p>Grib kortet og drej det rundt. Se lyset skifte i den holografiske overflade, og vend det for at se bagsiden.</p>
     <p id="holo-help" class="help">Træk vandret med mus eller finger. Du kan også bruge piletasterne, når kortet er markeret.</p>
     <div class="controls">
@@ -117,17 +117,17 @@
 </script>
 
 <style>
-  .holo-demo { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding: 4rem max(1.2rem, calc((100% - 1184px) / 2)); background: #101c30; color: #f7f4e9; overflow: hidden; }
+  .holo-demo { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding: 4rem max(1.2rem, calc((100% - 1184px) / 2)); background: radial-gradient(circle, #ffffff12 2px, transparent 3px) 0 0 / 24px 24px, linear-gradient(135deg, #243e94, #3e287b); color: #fff; overflow: hidden; border-top: 4px solid #172b42; }
   .holo-copy { padding: 0 1.8rem; }
-  .eyebrow { color: #e6c77e; font-size: .65rem; letter-spacing: .16em; font-weight: bold; }
-  h2 { font-size: clamp(2.4rem, 4vw, 3.8rem); line-height: 1.05; letter-spacing: -.05em; margin: 1.3rem 0; }
-  h2 em { font-family: Georgia, serif; color: #e6c77e; font-weight: normal; }
-  p { color: #bdc9dc; max-width: 29rem; }
+  .eyebrow { color: #ffdf57; font-size: .75rem; letter-spacing: .08em; font-weight: 900; }
+  h2 { font-size: clamp(2.4rem, 4vw, 3.8rem); line-height: 1.05; letter-spacing: -.05em; margin: 1.3rem 0; font-weight: 900; }
+  h2 em { color: #ffdf57; font-style: normal; font-weight: 900; }
+  p { color: #e2eaff; max-width: 29rem; }
   .help { font-size: .8rem; }
   .controls { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.5rem; }
-  .controls button { border: 1px solid #6c7d96; border-radius: .35rem; padding: .65rem .8rem; background: transparent; color: #f7f4e9; font: inherit; font-size: .8rem; cursor: pointer; }
+  .controls button { border: 2px solid #aebfe8; border-radius: 2rem; padding: .65rem .8rem; background: #1c2b65; color: #fff; font: inherit; font-size: .8rem; font-weight: 800; cursor: pointer; }
   .controls button:hover { background: #273853; }
-  .controls button:first-child { background: #e6c77e; color: #101c30; border-color: #e6c77e; }
+  .controls button:first-child { background: #ffdf57; color: #172b42; border-color: #172b42; box-shadow: 2px 3px 0 #172b42; }
   button:focus-visible { outline: 3px solid #f4d38b; outline-offset: 6px; }
   .card-control:focus-visible { outline: none; }
   .card-control:focus-visible .face { outline: 3px solid #f4d38b; outline-offset: 3px; }
@@ -163,7 +163,7 @@
   .back-emblem { font-size: 100px; line-height: 1; color: #e6c77e; }
   .back-wordmark { font: 900 29px Arial, sans-serif; letter-spacing: -2px; color: white; }
   .back-wordmark > span { color: #e6c77e; }
-  .viewer-caption { position: absolute; bottom: 0; color: #bdc9dc; font-size: .6rem; letter-spacing: .18em; }
+  .viewer-caption { position: absolute; bottom: 0; color: #e2eaff; font-size: .6rem; letter-spacing: .18em; }
   @keyframes float { 0%, 100% { transform: translateY(0) rotateZ(-3deg); } 50% { transform: translateY(-14px) rotateZ(1deg); } }
   @media (max-width: 760px) {
     .holo-demo { grid-template-columns: minmax(0, 1fr); gap: 1rem; padding-block: 3rem; }

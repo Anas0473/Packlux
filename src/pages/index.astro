@@ -17,7 +17,7 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Packlux er på vej. Et nyt sted for Pokémon booster packs med levering i Danmark." />
-    <meta name="theme-color" content="#172b42" />
+    <meta name="theme-color" content="#2459c4" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Packlux — Noget spændende er på vej</title>
   </head>
@@ -27,6 +27,7 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
       <a class="brand" href="/" aria-label="Packlux forside"><img src="/packlux-logo.png" alt="Packlux" width="1152" height="768" /></a>
       <nav aria-label="Hovedmenu">
         <a href="#sortiment">Booster packs</a>
+        <a href="#holo">Prøv et holo-kort ✦</a>
         <a href="#om">Om Packlux</a>
       </nav>
       <span class="launch-badge"><span aria-hidden="true"></span> Åbner snart</span>
@@ -34,10 +35,10 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
     <main id="indhold">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">TIL DIG, DER ELSKER AT ÅBNE PACKS</p>
+          <p class="eyebrow">KLAR, PARAT… PACKS! ✦</p>
           <h1 id="hero-title">Din næste<br />store <em>pull.</em></h1>
-          <p class="intro">Spændingen starter med en booster pack. Vi bygger et nyt sted for Pokémon-samlere med levering i Danmark.</p>
-          <a class="button" href="#sortiment">Se hvad der er på vej <span aria-hidden="true">↗</span></a>
+          <p class="intro">Den der følelse, når du åbner en ny pack… Er der mon et holo-kort i? Vi gør klar til Pokémon-packs og samlerglæde med levering i Danmark.</p>
+          <a class="button" href="#sortiment">Find din næste pack <span aria-hidden="true">↗</span></a>
           <p class="small-note">Vi gør klar til åbning. Salget er ikke startet endnu.</p>
         </div>
         <div class="pack-scene" role="img" aria-label="Illustrerede Packlux boosterpakker. Ikke faktiske produkter.">
@@ -54,7 +55,7 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
       </div>
       <section class="about" id="sortiment" aria-labelledby="range-title">
         <div>
-          <p class="eyebrow">LILLE SORTIMENT. STOR SPÆNDING.</p>
+          <p class="eyebrow">SMÅ PAKKER. STORE “WOOOW!”</p>
           <h2 id="range-title">Find din næste pack.</h2>
         </div>
         <div class="product-grid">
@@ -83,8 +84,8 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
       <HoloCard />
       <section class="closing" id="om" aria-labelledby="about-title">
         <p class="eyebrow">VELKOMMEN TIL PACKLUX</p>
-        <h2 id="about-title">Til samlingen.<br />Til spændingen.<br /><span>Til din næste pakke.</span></h2>
-        <p>En dansk webshop under opbygning. Følg med her, mens vi gør klar til de første packs.</p>
+        <h2 id="about-title">Saml. Byt. Begejstres.<br /><span>Én pack ad gangen!</span></h2>
+        <p>Vi pakker snart samlerglæden ud. Kig forbi igen, når de første packs lander!</p>
       </section>
     </main>
     <footer><a class="brand" href="/" aria-label="Packlux forside"><img src="/packlux-logo.png" alt="Packlux" width="1152" height="768" loading="lazy" /></a><p>© {year} Packlux</p><p>Uafhængig butik. Ikke tilknyttet The Pokémon Company.</p></footer>
@@ -94,57 +95,57 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
 <style>
   :global(*) { box-sizing: border-box; }
   :global(html) { scroll-behavior: smooth; scroll-padding-top: 2rem; }
-  :global(body) { margin: 0; background: #faf9f5; color: #172b42; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+  :global(body) { margin: 0; background: #f3f9ff; color: #172b42; font-family: "Trebuchet MS", "Arial Rounded MT Bold", Arial, sans-serif; line-height: 1.6; }
   :global(a) { color: inherit; }
   :global(a:focus-visible) { outline: 3px solid #cb6400; outline-offset: 6px; }
   .skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 5; padding: 1rem; background: white; }
   .skip-link:focus { top: 1rem; }
-  header { max-width: 1280px; margin: auto; padding: 1.6rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  header { max-width: 1280px; margin: auto; padding: 1.2rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
   .brand { display: inline-flex; flex: 0 0 auto; align-items: center; }
   .brand img { display: block; width: 180px; height: auto; border-radius: .4rem; }
-  nav { display: flex; gap: 2rem; font-size: .85rem; }
-  nav a { text-decoration: none; }
-  nav a:hover { text-decoration: underline; text-underline-offset: .3rem; }
-  .launch-badge { border: 1px solid #d9dedb; border-radius: 2rem; padding: .4rem .8rem; font-size: .75rem; white-space: nowrap; }
+  nav { display: flex; flex-wrap: wrap; gap: .6rem; font-size: .85rem; font-weight: 800; }
+  nav a { text-decoration: none; padding: .45rem .8rem; border-radius: 2rem; }
+  nav a:hover { background: #dceaff; color: #164396; }
+  .launch-badge { border: 2px solid #172b42; border-radius: 2rem; padding: .4rem .8rem; font-size: .75rem; font-weight: 800; background: #ffda44; box-shadow: 2px 3px 0 #172b42; white-space: nowrap; transform: rotate(3deg); }
   .launch-badge > span { display: inline-block; width: 6px; height: 6px; margin-right: .4rem; border-radius: 50%; background: #427350; }
   .hero { display: grid; grid-template-columns: 1fr 1fr; max-width: 1280px; margin: auto; padding: 4.5rem 3rem 5rem; gap: 2rem; align-items: center; }
-  .eyebrow { font-size: .7rem; font-weight: 700; letter-spacing: .16em; margin: 0 0 1.5rem; }
-  h1 { margin: 0; font-size: clamp(3.8rem, 6.8vw, 6.7rem); line-height: .98; letter-spacing: -.065em; font-weight: 800; }
-  h1 em { font-family: Georgia, serif; font-weight: 400; color: #8a5700; }
+  .eyebrow { font-size: .75rem; font-weight: 900; letter-spacing: .08em; margin: 0 0 1.5rem; color: #204fa8; }
+  h1 { margin: 0; font-size: clamp(3.8rem, 6.8vw, 6.7rem); line-height: 1.03; letter-spacing: -.055em; font-weight: 900; color: #2459c4; }
+  h1 em { font-style: normal; font-weight: 900; color: #ffda44; -webkit-text-stroke: 2px #172b42; paint-order: stroke fill; text-shadow: 3px 4px 0 #172b42; }
   .intro { max-width: 27rem; margin: 2rem 0; font-size: 1rem; color: #53606a; }
-  .button { display: inline-flex; gap: 2rem; align-items: center; background: #172b42; color: white; border-radius: .3rem; padding: .9rem 1.3rem; font-size: .85rem; font-weight: 700; text-decoration: none; }
-  .button:hover { background: #2d4863; }
+  .button { display: inline-flex; gap: 2rem; align-items: center; background: #ffda44; color: #172b42; border: 2px solid #172b42; border-radius: 2rem; box-shadow: 3px 4px 0 #172b42; padding: .9rem 1.3rem; font-size: .9rem; font-weight: 900; text-decoration: none; }
+  .button:hover { background: #ffe978; transform: translateY(-2px); }
   .button span { font-size: 1.2rem; }
   .small-note { font-size: .72rem; color: #616b72; margin-top: 1rem; }
-  .pack-scene { position: relative; overflow: clip; min-height: 440px; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse, #efe2c4 0%, #faf9f5 68%); isolation: isolate; }
-  .orbit { position: absolute; width: 92%; height: 70%; border: 1px solid #c9c7bc; border-radius: 50%; transform: rotate(-30deg); z-index: -1; }
+  .pack-scene { position: relative; overflow: clip; min-height: 440px; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, #ffffff70 2px, transparent 3px) 0 0 / 20px 20px, radial-gradient(ellipse, #97d8ff, #dceeff 65%, #f3f9ff 72%); border-radius: 45% 55% 40% 60%; isolation: isolate; }
+  .orbit { position: absolute; width: 92%; height: 70%; border: 3px dashed #2459c455; border-radius: 50%; transform: rotate(-30deg); z-index: -1; }
   .orbit-two { transform: rotate(35deg); height: 45%; }
   .pack { width: 175px; height: 270px; position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 22px 10px; background: repeating-linear-gradient(90deg, transparent 0 4px, #ffffff15 4px 5px), linear-gradient(135deg, #224769, #0d2034); color: #f0c868; border-top: 12px solid #1b3853; border-bottom: 12px solid #1b3853; box-shadow: 12px 22px 30px #172b4226; }
   .pack > span { font-size: 1.3rem; letter-spacing: -.06em; font-weight: 900; }
   .pack small { font-size: .46rem; letter-spacing: .14em; }
   .pack-symbol { font-size: 100px; line-height: 1; }
-  .pack-back { transform: translate(-65px, 12px) rotate(-18deg); background: repeating-linear-gradient(90deg, transparent 0 4px, #ffffff15 4px 5px), linear-gradient(135deg, #b28739, #eacb80); color: #172b42; border-color: #b68b3d; }
-  .pack-front { transform: translate(60px, -6px) rotate(13deg); }
-  .spark { position: absolute; font-size: 2.8rem; color: #926110; }
+  .pack-back { transform: translate(-65px, 12px) rotate(-18deg); background: repeating-linear-gradient(90deg, transparent 0 4px, #ffffff15 4px 5px), linear-gradient(135deg, #ffd33f, #ffed8c); color: #172b42; border-color: #e5a80c; }
+  .pack-front { transform: translate(60px, -6px) rotate(13deg); background: repeating-linear-gradient(90deg, transparent 0 4px, #ffffff15 4px 5px), linear-gradient(135deg, #3777ef, #163d9a); border-color: #163d9a; color: #ffdf57; }
+  .spark { position: absolute; font-size: 2.8rem; color: #ffcf25; text-shadow: 2px 2px 0 #172b42; }
   .spark-one { top: 20px; right: 15%; }
   .spark-two { bottom: 40px; left: 10%; }
   .art-caption { position: absolute; bottom: 0; font-size: .55rem; letter-spacing: .18em; color: #657079; }
-  .feature-strip { border-block: 1px solid #d9dedb; padding: 1.3rem 1.5rem; display: flex; justify-content: center; gap: 5rem; font-size: .8rem; }
-  .feature-strip span::before { content: "✦"; color: #8a5700; margin-right: .8rem; }
+  .feature-strip { border-block: 3px solid #172b42; background: #ffda44; padding: 1.1rem 1.5rem; display: flex; justify-content: center; gap: 5rem; font-size: .85rem; font-weight: 800; }
+  .feature-strip span::before { content: "✦"; color: #2459c4; margin-right: .8rem; }
   .about { max-width: 1280px; margin: auto; padding: 5rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-  h2 { font-size: clamp(1.9rem, 3vw, 2.7rem); letter-spacing: -.045em; line-height: 1.15; margin: 0; }
+  h2 { font-size: clamp(1.9rem, 3vw, 2.7rem); letter-spacing: -.045em; line-height: 1.15; margin: 0; font-weight: 900; }
   .product-grid { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
-  .product-card { min-width: 0; overflow: hidden; background: #fff; border: 1px solid #d9dedb; border-radius: .6rem; }
-  .product-art { position: relative; display: grid; place-items: center; min-height: 300px; background: radial-gradient(ellipse, var(--pack-glow), #f3f3ee 75%); }
-  .theme-gold { --pack-start: #a17422; --pack-end: #ecd080; --pack-edge: #a77826; --pack-ink: #172b42; --pack-glow: #eee0ad; }
-  .theme-midnight { --pack-start: #3e4c92; --pack-end: #151c39; --pack-edge: #29345e; --pack-ink: #efcf83; --pack-glow: #ccd1ea; }
-  .theme-emerald { --pack-start: #326e5f; --pack-end: #112f2b; --pack-edge: #265447; --pack-ink: #e8d39b; --pack-glow: #c4ded2; }
-  .theme-crimson { --pack-start: #a24653; --pack-end: #491c30; --pack-edge: #6f2e3b; --pack-ink: #f3d9a3; --pack-glow: #e9cbd0; }
+  .product-card { min-width: 0; overflow: hidden; background: #fff; border: 2px solid #172b42; border-radius: 1.3rem; box-shadow: 4px 5px 0 #172b42; }
+  .product-art { position: relative; display: grid; place-items: center; min-height: 300px; border-bottom: 2px solid #172b42; background: radial-gradient(circle, #ffffffa6 2px, transparent 3px) 0 0 / 16px 16px, radial-gradient(ellipse, var(--pack-glow), #f0f7ff); }
+  .theme-gold { --pack-start: #ffbf26; --pack-end: #ffe887; --pack-edge: #bd810b; --pack-ink: #172b42; --pack-glow: #ffdf57; }
+  .theme-midnight { --pack-start: #7164e8; --pack-end: #263d9b; --pack-edge: #303081; --pack-ink: #fff3bd; --pack-glow: #c7b3ff; }
+  .theme-emerald { --pack-start: #21a887; --pack-end: #126257; --pack-edge: #145648; --pack-ink: #fff2b0; --pack-glow: #7ce5bb; }
+  .theme-crimson { --pack-start: #f36a7a; --pack-end: #a32454; --pack-edge: #972b4c; --pack-ink: #fff3c4; --pack-glow: #ffabbc; }
   .catalog-pack { position: relative; width: 140px; height: 224px; padding: 14px 8px; transform: rotate(-7deg); color: var(--pack-ink); border-color: var(--pack-edge); background: repeating-linear-gradient(90deg, transparent 0 4px, #ffffff15 4px 5px), linear-gradient(135deg, var(--pack-start), var(--pack-end)); box-shadow: 8px 14px 20px #172b4226; }
   .catalog-pack .pack-symbol { font-size: 65px; }
   .catalog-pack > strong { text-align: center; font-size: .85rem; line-height: 1.2; }
   .catalog-pack > small { font-size: .35rem; letter-spacing: .08em; }
-  .demo-label { position: absolute; top: .8rem; left: .8rem; border: 1px solid #b7bebf; border-radius: 2rem; background: #ffffffd9; padding: .15rem .5rem; font-size: .6rem; font-weight: 700; letter-spacing: .1em; }
+  .demo-label { position: absolute; top: .8rem; left: .8rem; border: 2px solid #172b42; border-radius: 2rem; background: #fff; padding: .15rem .6rem; font-size: .65rem; font-weight: 900; letter-spacing: .1em; transform: rotate(-7deg); }
   .product-info { padding: 1.2rem; }
   .product-kind { margin: 0 0 .4rem; color: #616b72; font-size: .6rem; letter-spacing: .12em; }
   .product-info h3 { margin: 0; font-size: 1.1rem; letter-spacing: -.025em; }
@@ -152,13 +153,13 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
   .product-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .6rem; }
   .product-price > strong { font-size: 1.2rem; }
   .product-price > span { color: #616b72; font-size: .65rem; }
-  .product-info button { width: 100%; margin-top: 1rem; padding: .7rem .4rem; border: 1px solid #d9dedb; border-radius: .3rem; background: #eeeee7; color: #53606a; font: inherit; font-size: .7rem; cursor: not-allowed; }
+  .product-info button { width: 100%; margin-top: 1rem; padding: .7rem .4rem; border: 1px solid #b6c8df; border-radius: 2rem; background: #edf4ff; color: #455973; font: inherit; font-size: .7rem; cursor: not-allowed; }
   @media (max-width: 1050px) { .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 440px) { .product-grid { grid-template-columns: minmax(0, 1fr); } }
-  .closing { text-align: center; padding: 4rem 1.5rem; background: #172b42; color: white; }
+  .closing { text-align: center; padding: 4rem 1.5rem; background: radial-gradient(circle, #ffffff14 2px, transparent 3px) 0 0 / 22px 22px, #2459c4; border-top: 4px solid #172b42; color: white; }
   .closing h2 { font-size: clamp(2.5rem, 5vw, 4rem); }
-  .closing h2 span { color: #edc46f; }
-  .closing > p:last-child { color: #c1cbd4; max-width: 27rem; margin: 1.7rem auto 0; font-size: .9rem; }
+  .closing .eyebrow, .closing h2 span { color: #ffdf57; }
+  .closing > p:last-child { color: #edf4ff; max-width: 27rem; margin: 1.7rem auto 0; font-size: .9rem; }
   footer { max-width: 1280px; margin: auto; padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
   footer .brand img { width: 132px; }
   footer p { font-size: .7rem; color: #616b72; }
