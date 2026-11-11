@@ -19,8 +19,10 @@ remain disabled until checkout is implemented.
 
 ## Interactive holographic card
 
-`src/components/HoloCard.astro` displays an original, fictional card using CSS
+`src/components/HoloCard.astro` displays a card-shaped visual demo using CSS
 3D transforms, front/back faces, and angle-dependent holographic gradients.
+The front uses the Mew Pokemon Card 151 pack photo; the back uses the Packlux logo.
+The branded back is not the actual product packaging's reverse side.
 Drag horizontally to rotate through 360 degrees (mouse or touch); vertical touch
 scrolling is preserved. Arrow keys rotate/tilt the focused card; Enter, Space,
 or the flip button turns it over. Home or Reset restores the initial angle.

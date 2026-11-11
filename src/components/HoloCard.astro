@@ -9,35 +9,21 @@
       <button type="button" data-reset>Nulstil</button>
       <button type="button" data-pause aria-pressed="false">Pause svævning</button>
     </div>
-    <p class="disclaimer">Originalt, fiktivt Packlux-kort. Kun en visuel demo, ikke et produkt eller en pakkeåbning.</p>
+    <p class="disclaimer">Visuel demo med Pokémon Card 151 på forsiden og Packlux-logo på bagsiden. Ikke en gengivelse af pakkens faktiske bagside eller en pakkeåbning.</p>
   </div>
   <div class="viewer">
     <div class="halo" aria-hidden="true"></div>
     <div class="float">
-      <button class="card-control" type="button" aria-label="Drej holografisk Packlux-kort" aria-describedby="holo-help">
+      <button class="card-control" type="button" aria-label="Drej holografisk kort med Mew 151-pack og Packlux-logo" aria-describedby="holo-help">
         <span class="card-model" aria-hidden="true">
           <span class="face front">
-            <span class="card-top"><span>PACKLUX ORIGINAL</span><span>✦ 001</span></span>
-            <span class="art">
-              <span class="star-ring"></span>
-              <span class="crystal crystal-one"></span>
-              <span class="crystal crystal-two"></span>
-              <span class="crystal crystal-three"></span>
-              <span class="art-star">✦</span>
-              <span class="art-caption">THE FIRST DISCOVERY</span>
-            </span>
-            <span class="card-title">AURORA <span>✧</span></span>
-            <span class="card-subtitle">GOLDEN HORIZON · CONCEPT EDITION</span>
-            <span class="card-rule"></span>
-            <span class="card-description">Hvert glimt gemmer på en ny mulighed.</span>
-            <span class="card-bottom"><span>HOLOGRAPHIC DEMO</span><span>001 / 001</span></span>
+            <img class="mew-pack" src="/products/pokemon-151.png" alt="" width="380" height="766" draggable="false" />
           </span>
           <span class="face back">
             <span class="back-border"></span>
             <span class="back-top">THE NEXT DISCOVERY</span>
-            <span class="back-emblem">✦</span>
-            <span class="back-wordmark">PACK<span>LUX</span></span>
-            <span class="back-bottom">ORIGINAL CONCEPT · NOT FOR SALE</span>
+            <img class="back-logo" src="/packlux-logo.png" alt="" width="1152" height="768" draggable="false" />
+            <span class="back-bottom">PACKLUX · VISUEL DEMO</span>
           </span>
         </span>
       </button>
@@ -141,28 +127,13 @@
   .card-model { display: block; position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transform: rotateX(var(--tilt, 8deg)) rotateY(var(--rotation, -18deg)); transition: transform .3s ease-out; }
   [data-dragging] .card-model { transition: none; }
   .face { position: absolute; inset: 0; display: flex; flex-direction: column; border: 7px solid #d5bc76; border-radius: 17px; backface-visibility: hidden; -webkit-backface-visibility: hidden; overflow: hidden; box-shadow: 0 24px 45px #0007; text-align: left; }
-  .front { padding: 12px; background: linear-gradient(145deg, #303f61, #0d2536 65%, #453856); transform: translateZ(1px); }
+  .front { align-items: center; justify-content: center; padding: 8px; background: radial-gradient(ellipse, #ffe2f2, #f8f4ff 70%); transform: translateZ(1px); }
+  .mew-pack { display: block; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
   .face::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at var(--light-x, 40%) var(--light-y, 50%), #ffffff91, transparent 53%), repeating-linear-gradient(115deg, #ffbc5840 0%, #86f8dc50 12%, #8aa7ff55 24%, #f9b9ff50 36%, #ffbc5840 48%); background-size: 100% 100%, 220% 220%; background-position: center, var(--light-x, 40%) var(--light-y, 50%); mix-blend-mode: screen; opacity: .65; filter: hue-rotate(var(--hue, 0deg)); }
-  .card-top, .card-bottom { display: flex; justify-content: space-between; font: 8px Arial, sans-serif; letter-spacing: 1px; color: #f8e6ab; }
-  .art { position: relative; display: grid; place-items: center; height: 185px; flex-shrink: 0; margin: 12px 0; border: 1px solid #ead3989c; overflow: hidden; background: radial-gradient(ellipse at 50% 70%, #b8d5ed, #426995 25%, #272e56 55%, #10172d); }
-  .star-ring { width: 125px; height: 125px; border-radius: 50%; border: 1px solid #edd397; transform: rotateX(55deg) rotateZ(-30deg); position: absolute; box-shadow: 0 0 20px #97dcf9; }
-  .crystal { position: absolute; width: 65px; height: 105px; clip-path: polygon(50% 0, 100% 32%, 76% 88%, 50% 100%, 14% 80%, 0 29%); background: conic-gradient(from 25deg, #fff5c3, #7282e2, #c0fbef, #fff1b1, #ab83c3, #fff5c3); }
-  .crystal-one { transform: rotate(12deg); }
-  .crystal-two { transform: translate(-62px, 30px) rotate(-23deg) scale(.5); }
-  .crystal-three { transform: translate(63px, -20px) rotate(34deg) scale(.4); }
-  .art-star { position: absolute; right: 18px; top: 10px; font-size: 28px; color: #fff3be; }
-  .art-caption { position: absolute; bottom: 8px; font: 7px Arial, sans-serif; letter-spacing: 2px; color: #fff8df; }
-  .card-title { display: flex; justify-content: space-between; font: bold 23px Georgia, serif; letter-spacing: 2px; color: #f8e6ab; }
-  .card-subtitle { font: 6px Arial, sans-serif; letter-spacing: 1px; margin-top: 6px; color: #cfdae9; }
-  .card-rule { height: 1px; background: #d6c38a70; margin: 12px 0; }
-  .card-description { font: italic 10px Georgia, serif; color: #e7e8ef; }
-  .card-bottom { margin-top: auto; font-size: 6px; padding-top: 10px; }
   .back { align-items: center; justify-content: center; gap: 20px; background: repeating-linear-gradient(45deg, #172d48 0 5px, #1d3451 5px 6px); transform: rotateY(180deg) translateZ(1px); }
   .back-border { position: absolute; inset: 12px; border: 1px solid #e6c77e80; border-radius: 5px; }
   .back-top, .back-bottom { font: 7px Arial, sans-serif; letter-spacing: 1.5px; color: #e6c77e; }
-  .back-emblem { font-size: 100px; line-height: 1; color: #e6c77e; }
-  .back-wordmark { font: 900 29px Arial, sans-serif; letter-spacing: -2px; color: white; }
-  .back-wordmark > span { color: #e6c77e; }
+  .back-logo { display: block; width: 90%; height: auto; pointer-events: none; }
   .viewer-caption { position: absolute; bottom: 0; color: #e2eaff; font-size: .6rem; letter-spacing: .18em; }
   @keyframes float { 0%, 100% { transform: translateY(0) rotateZ(-3deg); } 50% { transform: translateY(-14px) rotateZ(1deg); } }
   @media (max-width: 760px) {
@@ -170,7 +141,6 @@
     .holo-copy { padding: 0; }
     .viewer { min-height: 465px; }
     .card-control { width: 240px; height: 350px; }
-    .art { height: 165px; }
   }
   @media (prefers-reduced-motion: reduce) { .float { animation: none; } .card-model { transition: none; } }
 </style>
