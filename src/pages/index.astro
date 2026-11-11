@@ -88,7 +88,7 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
         <p>Vi pakker snart samlerglæden ud. Kig forbi igen, når de første packs lander!</p>
       </section>
     </main>
-    <footer><a class="brand" href="/" aria-label="Packlux forside"><img src="/packlux-logo.png" alt="Packlux" width="1152" height="768" loading="lazy" /></a><p>© {year} Packlux</p><p>Uafhængig butik. Ikke tilknyttet The Pokémon Company.</p></footer>
+    <footer><a class="brand" href="/" aria-label="Packlux forside"><img src="/packlux-logo.png" alt="Packlux" width="1152" height="768" loading="lazy" /></a><p>© {year} Packlux · CVR: 46860330</p><p>Uafhængig butik. Ikke tilknyttet The Pokémon Company.</p></footer>
   </body>
 </html>
 
@@ -117,7 +117,8 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
   .button:hover { background: #ffe978; transform: translateY(-2px); }
   .button span { font-size: 1.2rem; }
   .small-note { font-size: .72rem; color: #616b72; margin-top: 1rem; }
-  .pack-scene { position: relative; overflow: clip; min-height: 440px; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, #ffffff70 2px, transparent 3px) 0 0 / 20px 20px, radial-gradient(ellipse, #97d8ff, #dceeff 65%, #f3f9ff 72%); border-radius: 45% 55% 40% 60%; isolation: isolate; }
+  .pack-scene { position: relative; overflow: clip; min-height: 440px; display: flex; align-items: center; justify-content: center; isolation: isolate; }
+  .pack-scene::before { content: ""; position: absolute; inset: 0; z-index: -2; border-radius: 45% 55% 40% 60%; background: radial-gradient(circle, #ffffff70 2px, transparent 3px) 0 0 / 20px 20px, radial-gradient(ellipse, #97d8ff, #dceeff 65%, #f3f9ff 72%); }
   .orbit { position: absolute; width: 92%; height: 70%; border: 3px dashed #2459c455; border-radius: 50%; transform: rotate(-30deg); z-index: -1; }
   .orbit-two { transform: rotate(35deg); height: 45%; }
   .pack { width: 175px; height: 270px; position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 22px 10px; background: repeating-linear-gradient(90deg, transparent 0 4px, #ffffff15 4px 5px), linear-gradient(135deg, #224769, #0d2034); color: #f0c868; border-top: 12px solid #1b3853; border-bottom: 12px solid #1b3853; box-shadow: 12px 22px 30px #172b4226; }
@@ -126,7 +127,7 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
   .pack-symbol { font-size: 100px; line-height: 1; }
   .pack-back { transform: translate(-65px, 12px) rotate(-18deg); background: repeating-linear-gradient(90deg, transparent 0 4px, #ffffff15 4px 5px), linear-gradient(135deg, #ffd33f, #ffed8c); color: #172b42; border-color: #e5a80c; }
   .pack-front { transform: translate(60px, -6px) rotate(13deg); background: repeating-linear-gradient(90deg, transparent 0 4px, #ffffff15 4px 5px), linear-gradient(135deg, #3777ef, #163d9a); border-color: #163d9a; color: #ffdf57; }
-  .spark { position: absolute; font-size: 2.8rem; color: #ffcf25; text-shadow: 2px 2px 0 #172b42; }
+  .spark { position: absolute; z-index: 1; font-size: 2.8rem; color: #ffcf25; text-shadow: 2px 2px 0 #172b42; }
   .spark-one { top: 20px; right: 15%; }
   .spark-two { bottom: 40px; left: 10%; }
   .art-caption { position: absolute; bottom: 0; font-size: .55rem; letter-spacing: .18em; color: #657079; }
