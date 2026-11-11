@@ -2,13 +2,12 @@
 import HoloCard from '../components/HoloCard.astro';
 
 const year = new Date().getFullYear();
-const demoPacks = [
-  { name: 'Golden Horizon', theme: 'gold', symbol: '✦', price: 39.95, stock: 'På lager · demo' },
-  { name: 'Midnight Spark', theme: 'midnight', symbol: 'ϟ', price: 44.95, stock: 'Få tilbage · demo' },
-  { name: 'Emerald Quest', theme: 'emerald', symbol: '◇', price: 39.95, stock: 'På lager · demo' },
-  { name: 'Crimson Nova', theme: 'crimson', symbol: '✧', price: 49.95, stock: 'Udsolgt · demo' },
+const boosterPacks = [
+  { name: '30th Celebration', theme: 'gold', image: '30th-celebration', width: 358, height: 722 },
+  { name: 'Storm Emerald', theme: 'emerald', image: 'storm-emerald', width: 376, height: 759 },
+  { name: 'White Flare', theme: 'midnight', image: 'white-flare', width: 382, height: 767 },
+  { name: 'Pokémon Card 151', theme: 'crimson', image: 'pokemon-151', width: 380, height: 766 },
 ];
-const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' });
 ---
 
 <!doctype html>
@@ -41,13 +40,12 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
           <a class="button" href="#sortiment">Find din næste pack <span aria-hidden="true">↗</span></a>
           <p class="small-note">Vi gør klar til åbning. Salget er ikke startet endnu.</p>
         </div>
-        <div class="pack-scene" role="img" aria-label="Illustrerede Packlux boosterpakker. Ikke faktiske produkter.">
+        <div class="pack-scene" role="img" aria-label="Japanske Pokémon booster packs: 30th Celebration og Storm Emerald.">
           <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
           <span class="spark spark-one" aria-hidden="true">✦</span>
           <span class="spark spark-two" aria-hidden="true">✧</span>
-          <div class="pack pack-back"><span>PACKLUX</span><div class="pack-symbol">✦</div><small>THE NEXT DISCOVERY</small></div>
-          <div class="pack pack-front"><span>PACKLUX</span><div class="pack-symbol">✦</div><small>YOUR NEXT GREAT PULL</small></div>
-          <span class="art-caption">PACKLUX · ILLUSTRATION</span>
+          <img class="hero-pack pack-back" src="/products/30th-celebration.png" alt="" width="358" height="722" />
+          <img class="hero-pack pack-front" src="/products/storm-emerald.png" alt="" width="376" height="759" />
         </div>
       </section>
       <div class="feature-strip" aria-label="Vores fokus">
@@ -59,23 +57,16 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
           <h2 id="range-title">Find din næste pack.</h2>
         </div>
         <div class="product-grid">
-          {demoPacks.map((product) => (
+          {boosterPacks.map((product) => (
             <article class="product-card">
-              <div class={`product-art theme-${product.theme}`} aria-hidden="true">
-                <span class="demo-label">DEMO</span>
-                <div class="pack catalog-pack">
-                  <span>PACKLUX</span>
-                  <div class="pack-symbol">{product.symbol}</div>
-                  <strong>{product.name}</strong>
-                  <small>CONCEPT BOOSTER · NOT FOR SALE</small>
-                </div>
+              <div class={`product-art theme-${product.theme}`}>
+                <img class="product-image" src={`/products/${product.image}.png`} alt={`${product.name} japansk Pokémon booster pack`} width={product.width} height={product.height} loading="lazy" />
               </div>
               <div class="product-info">
-                <p class="product-kind">FIKTIV BOOSTER PACK</p>
+                <p class="product-kind">POKÉMON · JAPANSK BOOSTER PACK</p>
                 <h3>{product.name}</h3>
-                <p class="product-stock">{product.stock}</p>
-                <div class="product-price"><strong>{formatPrice.format(product.price)}</strong><span>Eksempelpris</span></div>
-                <button type="button" disabled aria-label={`${product.name}: kun demo, kan ikke købes`}>Kun demo — kan ikke købes</button>
+                <p class="product-stock">Pris og lagerstatus kommer snart</p>
+                <button type="button" disabled aria-label={`${product.name}: bestilling åbner snart`}>Bestilling åbner snart</button>
               </div>
             </article>
           ))}
@@ -121,16 +112,12 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
   .pack-scene::before { content: ""; position: absolute; inset: 0; z-index: -2; border-radius: 45% 55% 40% 60%; background: radial-gradient(circle, #ffffff70 2px, transparent 3px) 0 0 / 20px 20px, radial-gradient(ellipse, #97d8ff, #dceeff 65%, #f3f9ff 72%); }
   .orbit { position: absolute; width: 92%; height: 70%; border: 3px dashed #2459c455; border-radius: 50%; transform: rotate(-30deg); z-index: -1; }
   .orbit-two { transform: rotate(35deg); height: 45%; }
-  .pack { width: 175px; height: 270px; position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 22px 10px; background: repeating-linear-gradient(90deg, transparent 0 4px, #ffffff15 4px 5px), linear-gradient(135deg, #224769, #0d2034); color: #f0c868; border-top: 12px solid #1b3853; border-bottom: 12px solid #1b3853; box-shadow: 12px 22px 30px #172b4226; }
-  .pack > span { font-size: 1.3rem; letter-spacing: -.06em; font-weight: 900; }
-  .pack small { font-size: .46rem; letter-spacing: .14em; }
-  .pack-symbol { font-size: 100px; line-height: 1; }
-  .pack-back { transform: translate(-65px, 12px) rotate(-18deg); background: repeating-linear-gradient(90deg, transparent 0 4px, #ffffff15 4px 5px), linear-gradient(135deg, #ffd33f, #ffed8c); color: #172b42; border-color: #e5a80c; }
-  .pack-front { transform: translate(60px, -6px) rotate(13deg); background: repeating-linear-gradient(90deg, transparent 0 4px, #ffffff15 4px 5px), linear-gradient(135deg, #3777ef, #163d9a); border-color: #163d9a; color: #ffdf57; }
+  .hero-pack { position: absolute; width: 145px; height: 292px; object-fit: contain; filter: drop-shadow(8px 14px 12px #172b4233); }
+  .pack-back { transform: translate(-65px, 12px) rotate(-18deg); }
+  .pack-front { transform: translate(60px, -6px) rotate(13deg); }
   .spark { position: absolute; z-index: 1; font-size: 2.8rem; color: #ffcf25; text-shadow: 2px 2px 0 #172b42; }
   .spark-one { top: 20px; right: 15%; }
   .spark-two { bottom: 40px; left: 10%; }
-  .art-caption { position: absolute; bottom: 0; font-size: .55rem; letter-spacing: .18em; color: #657079; }
   .feature-strip { border-block: 3px solid #172b42; background: #ffda44; padding: 1.1rem 1.5rem; display: flex; justify-content: center; gap: 5rem; font-size: .85rem; font-weight: 800; }
   .feature-strip span::before { content: "✦"; color: #2459c4; margin-right: .8rem; }
   .about { max-width: 1280px; margin: auto; padding: 5rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
@@ -138,22 +125,15 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
   .product-grid { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
   .product-card { min-width: 0; overflow: hidden; background: #fff; border: 2px solid #172b42; border-radius: 1.3rem; box-shadow: 4px 5px 0 #172b42; }
   .product-art { position: relative; display: grid; place-items: center; min-height: 300px; border-bottom: 2px solid #172b42; background: radial-gradient(circle, #ffffffa6 2px, transparent 3px) 0 0 / 16px 16px, radial-gradient(ellipse, var(--pack-glow), #f0f7ff); }
-  .theme-gold { --pack-start: #ffbf26; --pack-end: #ffe887; --pack-edge: #bd810b; --pack-ink: #172b42; --pack-glow: #ffdf57; }
-  .theme-midnight { --pack-start: #7164e8; --pack-end: #263d9b; --pack-edge: #303081; --pack-ink: #fff3bd; --pack-glow: #c7b3ff; }
-  .theme-emerald { --pack-start: #21a887; --pack-end: #126257; --pack-edge: #145648; --pack-ink: #fff2b0; --pack-glow: #7ce5bb; }
-  .theme-crimson { --pack-start: #f36a7a; --pack-end: #a32454; --pack-edge: #972b4c; --pack-ink: #fff3c4; --pack-glow: #ffabbc; }
-  .catalog-pack { position: relative; width: 140px; height: 224px; padding: 14px 8px; transform: rotate(-7deg); color: var(--pack-ink); border-color: var(--pack-edge); background: repeating-linear-gradient(90deg, transparent 0 4px, #ffffff15 4px 5px), linear-gradient(135deg, var(--pack-start), var(--pack-end)); box-shadow: 8px 14px 20px #172b4226; }
-  .catalog-pack .pack-symbol { font-size: 65px; }
-  .catalog-pack > strong { text-align: center; font-size: .85rem; line-height: 1.2; }
-  .catalog-pack > small { font-size: .35rem; letter-spacing: .08em; }
-  .demo-label { position: absolute; top: .8rem; left: .8rem; border: 2px solid #172b42; border-radius: 2rem; background: #fff; padding: .15rem .6rem; font-size: .65rem; font-weight: 900; letter-spacing: .1em; transform: rotate(-7deg); }
+  .theme-gold { --pack-glow: #ffdf57; }
+  .theme-midnight { --pack-glow: #c7b3ff; }
+  .theme-emerald { --pack-glow: #7ce5bb; }
+  .theme-crimson { --pack-glow: #ffabbc; }
+  .product-image { display: block; width: 150px; height: 260px; max-width: 90%; object-fit: contain; filter: drop-shadow(6px 10px 8px #172b4233); }
   .product-info { padding: 1.2rem; }
   .product-kind { margin: 0 0 .4rem; color: #616b72; font-size: .6rem; letter-spacing: .12em; }
   .product-info h3 { margin: 0; font-size: 1.1rem; letter-spacing: -.025em; }
   .product-stock { margin: .5rem 0 1rem; color: #53606a; font-size: .75rem; }
-  .product-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .6rem; }
-  .product-price > strong { font-size: 1.2rem; }
-  .product-price > span { color: #616b72; font-size: .65rem; }
   .product-info button { width: 100%; margin-top: 1rem; padding: .7rem .4rem; border: 1px solid #b6c8df; border-radius: 2rem; background: #edf4ff; color: #455973; font: inherit; font-size: .7rem; cursor: not-allowed; }
   @media (max-width: 1050px) { .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 440px) { .product-grid { grid-template-columns: minmax(0, 1fr); } }
@@ -171,7 +151,7 @@ const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency
     .hero { grid-template-columns: 1fr; padding: 2.5rem 1.2rem; gap: 1rem; }
     .hero-copy { max-width: 32rem; }
     .pack-scene { min-height: 380px; width: 100%; max-width: 480px; justify-self: center; }
-    .pack { width: 145px; height: 230px; }
+    .hero-pack { width: 125px; height: 252px; }
     .pack-front { transform: translate(50px, -6px) rotate(13deg); }
     .pack-back { transform: translate(-50px, 12px) rotate(-18deg); }
     .feature-strip { flex-wrap: wrap; gap: .7rem 1.5rem; }

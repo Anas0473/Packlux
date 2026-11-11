@@ -5,14 +5,14 @@
 Danish launch page for a future Pokemon booster-pack shop. Built with Astro and
 deployed as a static site on Cloudflare Pages.
 The storefront uses a playful blue-and-yellow palette, comic-style outlines,
-rounded controls, and original concept-pack artwork.
+rounded controls, and product photos supplied by the store.
 
-This is not an operational shop: no products, checkout, payment processing,
-customer accounts, or order collection are enabled. The pack illustrations are
-original placeholders, not actual products. The catalog displays four fictional
-Packlux concept packs with sample DKK prices and demo stock labels. All purchase
-buttons are disabled; no real availability or official Pokemon products are implied.
-Demo catalog data is defined in `src/pages/index.astro`.
+This is not an operational shop: checkout, payment processing, customer accounts,
+and order collection are not enabled. The catalog shows four Japanese Pokemon
+booster packs: 30th Celebration, Storm Emerald, White Flare, and Pokemon Card 151.
+Product photos in `public/products/` have transparent backgrounds and are also used
+in the hero. Prices and stock are unpublished; purchase buttons remain disabled.
+Catalog data is defined in `src/pages/index.astro`.
 
 ## Interactive holographic card
 
