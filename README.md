@@ -12,6 +12,16 @@ Packlux concept packs with sample DKK prices and demo stock labels. All purchase
 buttons are disabled; no real availability or official Pokemon products are implied.
 Demo catalog data is defined in `src/pages/index.astro`.
 
+## Interactive holographic card
+
+`src/components/HoloCard.astro` displays an original, fictional card using CSS
+3D transforms, front/back faces, and angle-dependent holographic gradients.
+Drag horizontally to rotate through 360 degrees (mouse or touch); vertical touch
+scrolling is preserved. Arrow keys rotate/tilt the focused card; Enter, Space,
+or the flip button turns it over. Home or Reset restores the initial angle.
+Floating can be paused and is disabled by the reduced-motion preference.
+This is a browser-rendered visual demo, not a Blender model, product, or pack-opening flow.
+
 ## Local development
 
 Use Node.js 24.21.0 (also pinned in `.node-version`).
