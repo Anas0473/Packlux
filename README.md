@@ -11,8 +11,11 @@ This is not an operational shop: checkout, payment processing, customer accounts
 and order collection are not enabled. The catalog shows four Japanese Pokemon
 booster packs: 30th Celebration, Storm Emerald, White Flare, and Pokemon Card 151.
 Product photos in `public/products/` have transparent backgrounds and are also used
-in the hero. Prices and stock are unpublished; purchase buttons remain disabled.
-Catalog data is defined in `src/pages/index.astro`.
+in the hero. Product images sit above separate bordered detail boxes.
+Prices in DKK and stock counts are manually maintained in the `boosterPacks` array
+in `src/pages/index.astro`, based on the store's supplied inventory sheet.
+They are a static inventory snapshot, not live stock tracking. Purchase buttons
+remain disabled until checkout is implemented.
 
 ## Interactive holographic card
 

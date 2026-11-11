@@ -3,11 +3,12 @@ import HoloCard from '../components/HoloCard.astro';
 
 const year = new Date().getFullYear();
 const boosterPacks = [
-  { name: '30th Celebration', theme: 'gold', image: '30th-celebration', width: 358, height: 722 },
-  { name: 'Storm Emerald', theme: 'emerald', image: 'storm-emerald', width: 376, height: 759 },
-  { name: 'White Flare', theme: 'midnight', image: 'white-flare', width: 382, height: 767 },
-  { name: 'Pokémon Card 151', theme: 'crimson', image: 'pokemon-151', width: 380, height: 766 },
+  { name: '30th Celebration', image: '30th-celebration', width: 358, height: 722, price: 79, stock: 60 },
+  { name: 'Storm Emerald', image: 'storm-emerald', width: 376, height: 759, price: 29, stock: 90 },
+  { name: 'White Flare', image: 'white-flare', width: 382, height: 767, price: 79, stock: 40 },
+  { name: 'Pokémon Card 151', image: 'pokemon-151', width: 380, height: 766, price: 189, stock: 60 },
 ];
+const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK', maximumFractionDigits: 0 });
 ---
 
 <!doctype html>
@@ -59,13 +60,14 @@ const boosterPacks = [
         <div class="product-grid">
           {boosterPacks.map((product) => (
             <article class="product-card">
-              <div class={`product-art theme-${product.theme}`}>
+              <div class="product-art">
                 <img class="product-image" src={`/products/${product.image}.png`} alt={`${product.name} japansk Pokémon booster pack`} width={product.width} height={product.height} loading="lazy" />
               </div>
               <div class="product-info">
                 <p class="product-kind">POKÉMON · JAPANSK BOOSTER PACK</p>
                 <h3>{product.name}</h3>
-                <p class="product-stock">Pris og lagerstatus kommer snart</p>
+                <p class="product-price">{formatPrice.format(product.price)} <span>pr. pack</span></p>
+                <p class="product-stock">{product.stock} packs på lager</p>
                 <button type="button" disabled aria-label={`${product.name}: bestilling åbner snart`}>Bestilling åbner snart</button>
               </div>
             </article>
@@ -123,16 +125,14 @@ const boosterPacks = [
   .about { max-width: 1280px; margin: auto; padding: 5rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
   h2 { font-size: clamp(1.9rem, 3vw, 2.7rem); letter-spacing: -.045em; line-height: 1.15; margin: 0; font-weight: 900; }
   .product-grid { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
-  .product-card { min-width: 0; overflow: hidden; background: #fff; border: 2px solid #172b42; border-radius: 1.3rem; box-shadow: 4px 5px 0 #172b42; }
-  .product-art { position: relative; display: grid; place-items: center; min-height: 300px; border-bottom: 2px solid #172b42; background: radial-gradient(circle, #ffffffa6 2px, transparent 3px) 0 0 / 16px 16px, radial-gradient(ellipse, var(--pack-glow), #f0f7ff); }
-  .theme-gold { --pack-glow: #ffdf57; }
-  .theme-midnight { --pack-glow: #c7b3ff; }
-  .theme-emerald { --pack-glow: #7ce5bb; }
-  .theme-crimson { --pack-glow: #ffabbc; }
+  .product-card { min-width: 0; display: flex; flex-direction: column; }
+  .product-art { position: relative; display: grid; place-items: center; min-height: 300px; }
   .product-image { display: block; width: 150px; height: 260px; max-width: 90%; object-fit: contain; filter: drop-shadow(6px 10px 8px #172b4233); }
-  .product-info { padding: 1.2rem; }
+  .product-info { flex: 1; padding: 1.2rem; background: #fff; border: 2px solid #172b42; border-radius: 1.3rem; box-shadow: 4px 5px 0 #172b42; }
   .product-kind { margin: 0 0 .4rem; color: #616b72; font-size: .6rem; letter-spacing: .12em; }
   .product-info h3 { margin: 0; font-size: 1.1rem; letter-spacing: -.025em; }
+  .product-price { margin: .7rem 0 0; font-size: 1.4rem; font-weight: 900; color: #172b42; }
+  .product-price span { font-size: .75rem; font-weight: 400; color: #53606a; }
   .product-stock { margin: .5rem 0 1rem; color: #53606a; font-size: .75rem; }
   .product-info button { width: 100%; margin-top: 1rem; padding: .7rem .4rem; border: 1px solid #b6c8df; border-radius: 2rem; background: #edf4ff; color: #455973; font: inherit; font-size: .7rem; cursor: not-allowed; }
   @media (max-width: 1050px) { .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
