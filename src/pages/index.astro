@@ -1,5 +1,12 @@
 ---
 const year = new Date().getFullYear();
+const demoPacks = [
+  { name: 'Golden Horizon', theme: 'gold', symbol: '✦', price: 39.95, stock: 'På lager · demo' },
+  { name: 'Midnight Spark', theme: 'midnight', symbol: 'ϟ', price: 44.95, stock: 'Få tilbage · demo' },
+  { name: 'Emerald Quest', theme: 'emerald', symbol: '◇', price: 39.95, stock: 'På lager · demo' },
+  { name: 'Crimson Nova', theme: 'crimson', symbol: '✧', price: 49.95, stock: 'Udsolgt · demo' },
+];
+const formatPrice = new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' });
 ---
 
 <!doctype html>
@@ -47,11 +54,33 @@ const year = new Date().getFullYear();
       <section class="about" id="sortiment" aria-labelledby="range-title">
         <div>
           <p class="eyebrow">LILLE SORTIMENT. STOR SPÆNDING.</p>
-          <h2 id="range-title">Fokus på booster packs.</h2>
+          <h2 id="range-title">Find din næste pack.</h2>
         </div>
         <div>
-          <p>Vi starter med Pokémon booster packs. Her vil du kunne finde vores udvalg, priser og lagerstatus, når shoppen åbner.</p>
-          <div class="notice"><span class="notice-icon" aria-hidden="true">↗</span><div><strong>Sortimentet er på vej</strong><p>Produkter, fragtpriser og betalingsmuligheder offentliggøres inden åbning. Du kan ikke bestille endnu.</p></div></div>
+          <p>Et smugkig på, hvordan vores kommende udvalg kan se ud.</p>
+          <div class="notice" id="demo-notice"><span class="notice-icon" aria-hidden="true">↗</span><div><strong>Kun en demonstration — ikke til salg</strong><p>Alle packs nedenfor er fiktive Packlux-designs, ikke officielle Pokémon-produkter. Navne, priser og lagerstatus er eksempler. Bestilling og betaling er ikke muligt.</p></div></div>
+        </div>
+        <div class="product-grid" aria-describedby="demo-notice">
+          {demoPacks.map((product) => (
+            <article class="product-card">
+              <div class={`product-art theme-${product.theme}`} aria-hidden="true">
+                <span class="demo-label">DEMO</span>
+                <div class="pack catalog-pack">
+                  <span>PACKLUX</span>
+                  <div class="pack-symbol">{product.symbol}</div>
+                  <strong>{product.name}</strong>
+                  <small>CONCEPT BOOSTER · NOT FOR SALE</small>
+                </div>
+              </div>
+              <div class="product-info">
+                <p class="product-kind">FIKTIV BOOSTER PACK</p>
+                <h3>{product.name}</h3>
+                <p class="product-stock">{product.stock}</p>
+                <div class="product-price"><strong>{formatPrice.format(product.price)}</strong><span>Eksempelpris</span></div>
+                <button type="button" disabled aria-label={`${product.name}: kun demo, kan ikke købes`}>Kun demo — kan ikke købes</button>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
       <section class="closing" id="om" aria-labelledby="about-title">
@@ -112,6 +141,28 @@ const year = new Date().getFullYear();
   .notice strong { font-size: .9rem; }
   .notice p { margin: .4rem 0 0; font-size: .85rem; color: #53606a; }
   .notice-icon { font-size: 1.5rem; }
+  .product-grid { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
+  .product-card { min-width: 0; overflow: hidden; background: #fff; border: 1px solid #d9dedb; border-radius: .6rem; }
+  .product-art { position: relative; display: grid; place-items: center; min-height: 300px; background: radial-gradient(ellipse, var(--pack-glow), #f3f3ee 75%); }
+  .theme-gold { --pack-start: #a17422; --pack-end: #ecd080; --pack-edge: #a77826; --pack-ink: #172b42; --pack-glow: #eee0ad; }
+  .theme-midnight { --pack-start: #3e4c92; --pack-end: #151c39; --pack-edge: #29345e; --pack-ink: #efcf83; --pack-glow: #ccd1ea; }
+  .theme-emerald { --pack-start: #326e5f; --pack-end: #112f2b; --pack-edge: #265447; --pack-ink: #e8d39b; --pack-glow: #c4ded2; }
+  .theme-crimson { --pack-start: #a24653; --pack-end: #491c30; --pack-edge: #6f2e3b; --pack-ink: #f3d9a3; --pack-glow: #e9cbd0; }
+  .catalog-pack { position: relative; width: 140px; height: 224px; padding: 14px 8px; transform: rotate(-7deg); color: var(--pack-ink); border-color: var(--pack-edge); background: repeating-linear-gradient(90deg, transparent 0 4px, #ffffff15 4px 5px), linear-gradient(135deg, var(--pack-start), var(--pack-end)); box-shadow: 8px 14px 20px #172b4226; }
+  .catalog-pack .pack-symbol { font-size: 65px; }
+  .catalog-pack > strong { text-align: center; font-size: .85rem; line-height: 1.2; }
+  .catalog-pack > small { font-size: .35rem; letter-spacing: .08em; }
+  .demo-label { position: absolute; top: .8rem; left: .8rem; border: 1px solid #b7bebf; border-radius: 2rem; background: #ffffffd9; padding: .15rem .5rem; font-size: .6rem; font-weight: 700; letter-spacing: .1em; }
+  .product-info { padding: 1.2rem; }
+  .product-kind { margin: 0 0 .4rem; color: #616b72; font-size: .6rem; letter-spacing: .12em; }
+  .product-info h3 { margin: 0; font-size: 1.1rem; letter-spacing: -.025em; }
+  .product-stock { margin: .5rem 0 1rem; color: #53606a; font-size: .75rem; }
+  .product-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .6rem; }
+  .product-price > strong { font-size: 1.2rem; }
+  .product-price > span { color: #616b72; font-size: .65rem; }
+  .product-info button { width: 100%; margin-top: 1rem; padding: .7rem .4rem; border: 1px solid #d9dedb; border-radius: .3rem; background: #eeeee7; color: #53606a; font: inherit; font-size: .7rem; cursor: not-allowed; }
+  @media (max-width: 1050px) { .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 440px) { .product-grid { grid-template-columns: minmax(0, 1fr); } }
   .closing { text-align: center; padding: 4rem 1.5rem; background: #172b42; color: white; }
   .closing h2 { font-size: clamp(2.5rem, 5vw, 4rem); }
   .closing h2 span { color: #edc46f; }

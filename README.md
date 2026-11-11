@@ -7,7 +7,10 @@ deployed as a static site on Cloudflare Pages.
 
 This is not an operational shop: no products, checkout, payment processing,
 customer accounts, or order collection are enabled. The pack illustrations are
-original placeholders, not actual products.
+original placeholders, not actual products. The catalog displays four fictional
+Packlux concept packs with sample DKK prices and demo stock labels. All purchase
+buttons are disabled; no real availability or official Pokemon products are implied.
+Demo catalog data is defined in `src/pages/index.astro`.
 
 ## Local development
 
