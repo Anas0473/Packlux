@@ -1,65 +1,131 @@
-# Packlux
+<p align="center">
+  <img src="public/packlux-logo.png" alt="Packlux" width="360" />
+</p>
 
-![Packlux logo](public/packlux-logo.png)
+<h1 align="center">Small packs. Big discoveries.</h1>
 
-Danish launch page for a future Pokemon booster-pack shop. Built with Astro and
-deployed as a static site on Cloudflare Pages.
-The storefront uses a playful blue-and-yellow palette, comic-style outlines,
-rounded controls, and product photos supplied by the store.
+<p align="center">
+  A playful Danish storefront for Japanese Pokémon booster packs.<br />
+  Built for the excitement of the next great pull.
+</p>
 
-This is not an operational shop: checkout, payment processing, customer accounts,
-and order collection are not enabled. The catalog shows four Japanese Pokemon
-booster packs: 30th Celebration, Storm Emerald, White Flare, and Pokemon Card 151.
-Product photos in `public/products/` have transparent backgrounds and are also used
-in the hero. Product images sit above separate bordered detail boxes.
-Prices in DKK and stock counts are manually maintained in the `boosterPacks` array
-in `src/pages/index.astro`, based on the store's supplied inventory sheet.
-They are a static inventory snapshot, not live stock tracking. Purchase buttons
-remain disabled until checkout is implemented.
+<p align="center">
+  <a href="https://packlux-87w.pages.dev/"><strong>Explore Packlux</strong></a>
+  &nbsp; · &nbsp;
+  <a href="https://packlux-87w.pages.dev/#sortiment">Browse the packs</a>
+  &nbsp; · &nbsp;
+  <a href="https://packlux-87w.pages.dev/#holo">Spin the holo card</a>
+</p>
 
-## Interactive holographic card
+---
 
-`src/components/HoloCard.astro` displays a card-shaped visual demo using CSS
-3D transforms, front/back faces, and angle-dependent holographic gradients.
-The front uses the Mew Pokemon Card 151 pack photo; the back uses the Packlux logo.
-The branded back is not the actual product packaging's reverse side.
-Drag horizontally to rotate through 360 degrees (mouse or touch); vertical touch
-scrolling is preserved. Arrow keys rotate/tilt the focused card; Enter, Space,
-or the flip button turns it over. Home or Reset restores the initial angle.
-Floating can be paused and is disabled by the reduced-motion preference.
-This is a browser-rendered visual demo, not a Blender model, product, or pack-opening flow.
+## A little collector energy
 
-## Local development
+Bright blue and yellow, chunky outlines, floating packs, and a little holographic
+magic. Packlux brings a playful trading-card feel to a lightweight storefront,
+with Danish copy, DKK prices, and a focus on delivery in Denmark.
 
-Use Node.js 24.21.0 (also pinned in `.node-version`).
+- **The real lineup:** 30th Celebration, Storm Emerald, White Flare, and Pokémon Card 151.
+- **Packs in the spotlight:** transparent product photos, clear prices, and stock counts.
+- **Give it a spin:** a floating, draggable 360° card with angle-reactive rainbow shine.
+- **Two sides to discover:** Mew's 151 pack on the front, our Packlux logo on the back.
+- **Made for small screens too:** responsive layouts, touch controls, and keyboard support.
+- **Keep it calm:** pause the floating animation, or use your device's reduced-motion setting.
+
+> **Getting ready to open:** the site is live, but orders and payments are not
+> enabled. Stock counts are a manually maintained snapshot, not live inventory.
+> The spinning card is a visual demo; its branded back is not the pack's actual reverse side.
+
+## Under the wrapper
+
+| Layer | Built with |
+| --- | --- |
+| Website | [Astro](https://astro.build/) with TypeScript |
+| Look and feel | Custom CSS, gradients, and 3D transforms |
+| Interaction | Browser-native pointer and keyboard events |
+| Hosting | [Cloudflare Pages](https://pages.cloudflare.com/) |
+| Deployments | GitHub pushes to `main` |
+
+No 3D engine, Blender model, database, or paid service is required for the current
+site. The holographic effect runs directly in the browser.
+
+## Run it locally
+
+Use **Node.js 24.21.0**, pinned in [`.node-version`](.node-version).
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Run `npm run build` to generate `dist/`, or `npm run preview` to preview a build.
-Page content and styling are in `src/pages/index.astro`.
-
-## Cloudflare Pages
-
-Connect the GitHub repository `Anas0473/Packlux` using the Pages Git integration.
-
-| Setting | Value |
+| Command | What it does |
 | --- | --- |
-| Production branch | `main` |
+| `npm run dev` | Start the development server |
+| `npm run build` | Generate the production site in `dist/` |
+| `npm run preview` | Preview the production build locally |
+
+### Where things live
+
+```text
+src/
+  pages/index.astro        Storefront, product data, prices, and stock
+  components/HoloCard.astro
+                          Interactive two-sided holographic card
+public/
+  packlux-logo.png         Packlux branding
+  products/               Transparent booster-pack photos
+```
+
+Update the `boosterPacks` array in [`src/pages/index.astro`](src/pages/index.astro)
+to change the displayed prices or stock counts. Card artwork and interaction live
+in [`src/components/HoloCard.astro`](src/components/HoloCard.astro).
+
+### Spin controls
+
+| Input | Action |
+| --- | --- |
+| Drag left or right | Rotate the card through 360° |
+| Arrow keys, with the card focused | Rotate or tilt |
+| Enter, Space, or **Vend kortet** | Flip the card |
+| Home or **Nulstil** | Restore the starting angle |
+| **Pause svævning** | Pause or resume floating |
+
+Vertical touch scrolling stays available. Reduced-motion preferences disable
+automatic floating.
+
+## From commit to Cloudflare
+
+The GitHub repository is connected to Cloudflare Pages. Push to `main` to trigger
+an automatic production deployment.
+
+| Build setting | Value |
+| --- | --- |
 | Framework preset | Astro |
+| Production branch | `main` |
 | Build command | `npm run build` |
-| Build output directory | `dist` |
-| Root directory | Repository root (default) |
+| Output directory | `dist` |
+| Root directory | Repository root |
 
-The `.node-version` file selects the build runtime. No environment variables,
-database, paid services, or server adapter are required for this launch page.
-Pushes to `main` trigger production builds once the Git integration is enabled.
+The build runtime comes from `.node-version`. No environment variables or server
+adapter are needed for the current static site.
 
-## Before accepting orders
+## Still to unpack
 
-Add verified product details and licensed product photography, stock management,
-server-validated checkout, payment confirmation handling, shipping rates, and
-accurate business, privacy, and sales terms. Payment processing and delivery
-can have per-order costs even when hosting has no monthly cost.
+Before accepting orders:
+
+- [ ] Shopping cart and server-validated checkout
+- [ ] Payment integration and confirmed-payment handling
+- [ ] Live inventory and order management
+- [ ] Shipping rates and delivery options
+- [ ] Complete business details, sales terms, and privacy information
+
+Hosting currently uses Cloudflare's free Pages tier. Payment processing, shipping,
+and an optional custom domain may still have costs.
+
+---
+
+<p align="center">
+  <strong>Packlux</strong> · CVR: 46860330<br />
+  <a href="mailto:packluxdk@gmail.com">packluxdk@gmail.com</a><br />
+  <sub>Independent store. Not affiliated with The Pokémon Company.</sub>
+</p>
